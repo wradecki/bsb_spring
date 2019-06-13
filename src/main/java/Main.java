@@ -14,7 +14,9 @@ public class Main {
         applicationContext.scan("pl.bsb");
         applicationContext.refresh();
         CustomerService customerService = applicationContext.getBean(CustomerService.class);
+        CustomerService customerService2 = applicationContext.getBean("customerService", CustomerService.class);
 
         System.out.println("customerService: " + customerService);
+        System.out.println("customerService2: " + customerService2);
     }
 }
