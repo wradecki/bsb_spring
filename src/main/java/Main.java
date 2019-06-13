@@ -20,7 +20,7 @@ public class Main {
 //        System.out.println("customerService: " + customerService);
 //        System.out.println("customerService2: " + customerService2);
 
-        OtherService bean = applicationContext.getBean(OtherService.class);
+        OtherService bean = applicationContext.getBean("othersService2", OtherService.class);
 
         System.out.println("otherService: " + bean);
         bean.doElse();

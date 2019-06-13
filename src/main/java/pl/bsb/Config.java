@@ -11,4 +11,9 @@ public class Config {
     public CustomerService getCustomerService(){
         return new CustomerService();
     }
+
+    @Bean("othersService2")
+    public OtherService getOthersService() {
+        return new OtherService(getCustomerService());
+    }
 }

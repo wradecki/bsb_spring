@@ -16,6 +16,10 @@ public class OtherService {
         this.customerService = customerService;
     }
 
+    public OtherService(CustomerService customerService) {
+        this.customerService = new CustomerService[]{customerService};
+    }
+
     public void doSomething(){
         for (CustomerService service : customerService) {
             System.out.println(service);
