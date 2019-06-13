@@ -13,10 +13,10 @@ public class Main {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         applicationContext.scan("pl.bsb");
         applicationContext.refresh();
-        CustomerService customerService = applicationContext.getBean(CustomerService.class);
-        CustomerService customerService2 = applicationContext.getBean("customerService", CustomerService.class);
-
-        System.out.println("customerService: " + customerService);
-        System.out.println("customerService2: " + customerService2);
+//        CustomerService customerService = applicationContext.getBean(CustomerService.class);
+//        CustomerService customerService2 = applicationContext.getBean("customerService", CustomerService.class);
+//
+//        System.out.println("customerService: " + customerService);
+//        System.out.println("customerService2: " + customerService2);
     }
 }
