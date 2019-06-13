@@ -17,7 +17,7 @@ import java.io.Reader;
 public class Main {
     public static void main(String[] args) {
         GenericApplicationContext applicationContext = new GenericApplicationContext();
-        applicationContext.getEnvironment().setActiveProfiles("dev");
+//        applicationContext.getEnvironment().setActiveProfiles("dev");
         XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(applicationContext);
         xmlBeanDefinitionReader.loadBeanDefinitions("/beans.xml");
         AnnotatedBeanDefinitionReader annotatedBeanDefinitionReader = new AnnotatedBeanDefinitionReader(applicationContext);
