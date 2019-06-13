@@ -5,9 +5,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class OtherService {
-    @Autowired
     private CustomerService[] customerService;
 
+
+    public OtherService() {
+    }
+
+    @Autowired
     public OtherService(CustomerService[] customerService) {
         this.customerService = customerService;
     }
