@@ -4,6 +4,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.GenericApplicationContext;
 import pl.bsb.CustomerService;
+import pl.bsb.OtherService;
 
 /**
  * Created by Wojciech Oczkowski on 2019-06-13.
@@ -18,5 +19,9 @@ public class Main {
 //
 //        System.out.println("customerService: " + customerService);
 //        System.out.println("customerService2: " + customerService2);
+
+        OtherService bean = applicationContext.getBean(OtherService.class);
+
+        System.out.println("otherService: " + bean);
     }
 }
