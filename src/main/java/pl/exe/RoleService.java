@@ -1,5 +1,7 @@
 package pl.exe;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class RoleService {
     PermissionService permissionService;
 
@@ -11,6 +13,7 @@ public class RoleService {
         System.out.println("RoleService");
     }
 
+    @Autowired
     public void setPermissionService(PermissionService permissionService) {
         System.out.println("setter");
         this.permissionService = permissionService;
