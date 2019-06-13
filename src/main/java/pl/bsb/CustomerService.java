@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 //@Component
 //@Repository
 @Service()
-@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON, proxyMode = ScopedProxyMode.TARGET_CLASS)
+@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
 @Lazy
 //@Scope("request")
 //@Scope("webapplication")
