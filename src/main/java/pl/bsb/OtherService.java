@@ -11,4 +11,8 @@ public class OtherService {
     public void doSomething(){
         System.out.println(customerService);
     }
+
+    public void doElse() {
+        System.out.println("else");
+    }
 }

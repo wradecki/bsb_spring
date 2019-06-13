@@ -23,6 +23,6 @@ public class Main {
         OtherService bean = applicationContext.getBean(OtherService.class);
 
         System.out.println("otherService: " + bean);
-        bean.doSomething();
+        bean.doElse();
     }
 }
