@@ -10,10 +10,9 @@ import pl.bsb.CustomerService;
  */
 public class Main {
     public static void main(String[] args) {
-        GenericApplicationContext applicationContext = new GenericApplicationContext();
-        new AnnotatedBeanDefinitionReader(applicationContext).register(CustomerService.class);
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        applicationContext.scan("pl.bsb");
         applicationContext.refresh();
-
         CustomerService customerService = applicationContext.getBean(CustomerService.class);
 
         System.out.println("customerService: " + customerService);
