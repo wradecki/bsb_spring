@@ -6,10 +6,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class OtherService {
     @Autowired
-    private CustomerService customerService;
+    private CustomerService[] customerService;
+
+    public OtherService(CustomerService[] customerService) {
+        this.customerService = customerService;
+    }
 
     public void doSomething(){
-        System.out.println(customerService);
+        for (CustomerService service : customerService) {
+            System.out.println(service);
+        }
     }
 
     public void doElse() {
