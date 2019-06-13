@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 //@Component
 //@Repository
 @Service
-@Scope("prototype")
+@Scope("protuotype")
 //@Scope("request")
 //@Scope("webapplication")
 //@Controller
