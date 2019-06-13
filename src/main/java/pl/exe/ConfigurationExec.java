@@ -18,6 +18,6 @@ public class ConfigurationExec {
     @Profile("dev")
     @Bean(name = "permissionService")
     public PermissionService getPermissionServiceDev(){
-        return null;
+        return new PermissionService();
     }
 }
