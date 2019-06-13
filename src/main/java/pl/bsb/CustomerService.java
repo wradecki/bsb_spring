@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 //@Component
 //@Repository
 @Service
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 //@Scope("request")
 //@Scope("webapplication")
 //@Controller
