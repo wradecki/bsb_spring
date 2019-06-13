@@ -1,4 +1,5 @@
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import org.springframework.context.annotation.AnnotatedBeanDefinitionReader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.GenericApplicationContext;
@@ -10,8 +11,7 @@ import pl.bsb.CustomerService;
 public class Main {
     public static void main(String[] args) {
         GenericApplicationContext applicationContext = new GenericApplicationContext();
-        XmlBeanDefinitionReader definitionReader = new XmlBeanDefinitionReader(applicationContext);
-        definitionReader.loadBeanDefinitions("/beans.xml");
+        new AnnotatedBeanDefinitionReader(applicationContext).register(CustomerService.class);
         applicationContext.refresh();
 
         CustomerService customerService = applicationContext.getBean(CustomerService.class);
