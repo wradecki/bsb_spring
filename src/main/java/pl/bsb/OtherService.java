@@ -7,4 +7,8 @@ import org.springframework.stereotype.Service;
 public class OtherService {
     @Autowired
     private CustomerService customerService;
+
+    public void doSomething(){
+        System.out.println(customerService);
+    }
 }
