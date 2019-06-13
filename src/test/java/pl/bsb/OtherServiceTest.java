@@ -1,9 +1,6 @@
 package pl.bsb;
 
 import org.junit.Test;
-import org.springframework.util.ReflectionUtils;
-
-import static org.junit.Assert.*;
 
 public class OtherServiceTest {
 

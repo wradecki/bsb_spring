@@ -1,15 +1,8 @@
-import org.springframework.beans.factory.support.BeanDefinitionReader;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.annotation.AnnotatedBeanDefinitionReader;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.GenericApplicationContext;
-import pl.bsb.CustomerService;
-import pl.bsb.OtherService;
 import pl.exe.ConfigurationExec;
 import pl.exe.UserService;
-
-import java.io.Reader;
 
 /**
  * Created by Wojciech Oczkowski on 2019-06-13.
