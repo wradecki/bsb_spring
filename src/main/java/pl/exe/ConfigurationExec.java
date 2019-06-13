@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Profile;
 @ComponentScan({"pl.exe"})
 public class ConfigurationExec {
 
+    @Profile("prod")
     @Bean(name = "permissionService")
     public PermissionService getPermissionService(){
         return new PermissionService();
