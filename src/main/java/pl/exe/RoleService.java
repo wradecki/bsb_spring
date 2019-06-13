@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class RoleService {
     PermissionService permissionService;
 
-    String serviceName;
+    String serviceNames[];
 
     public RoleService() {
     }
@@ -21,9 +21,11 @@ public class RoleService {
         this.permissionService = permissionService;
     }
 
-    public void setServiceName(String serviceName) {
-        System.out.println("setServiceName: " + serviceName);
+    public void setServiceName(String[] serviceNames) {
+        System.out.print("setServiceName: [");
+        System.out.print(String.join(", ", serviceNames));
+        System.out.println("]");
 
-        this.serviceName = serviceName;
+        this.serviceNames = serviceNames;
     }
 }

@@ -23,7 +23,13 @@
     <beans profile="prod">
         <bean class="pl.exe.RoleService">
             <property name="permissionService" ref="permissionService" />
-            <property name="serviceName" value="test1" />
+
+            <property name="serviceName" >
+                <util:list>
+                    <value>a</value>
+                    <value>b</value>
+                </util:list>
+            </property>
         </bean>
     </beans>
 
