@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 //@Repository
 @Service
 @Scope("prototype")
+//@Scope("request")
+//@Scope("webapplication")
 //@Controller
 //@RestController
 public class CustomerService {
