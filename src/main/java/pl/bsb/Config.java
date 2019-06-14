@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class Config {
 
-    @Bean(name = "custService")
+    @Bean(name = "custService", initMethod = "test")
     public CustomerService getCustomerService(){
         return new CustomerService();
     }
