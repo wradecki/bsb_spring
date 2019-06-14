@@ -1,12 +1,13 @@
 package pl.exe;
 
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import pl.value.MyDbConfig;
 
 import javax.annotation.PostConstruct;
 
-public class RoleService {
+public class RoleService implements InitializingBean {
     PermissionService permissionService;
 
     String serviceNames[];
@@ -41,5 +42,10 @@ public class RoleService {
         System.out.println(config);
 
         this.serviceNames = serviceNames;
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+
     }
 }
