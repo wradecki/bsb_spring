@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import pl.value.MyDbConfig;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 public class RoleService implements InitializingBean {
     PermissionService permissionService;
@@ -21,6 +22,11 @@ public class RoleService implements InitializingBean {
     @PostConstruct
     public void init() {
         System.out.println("postConstruct");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("preDestroy");
     }
 
     public RoleService(PermissionService permissionService) {
