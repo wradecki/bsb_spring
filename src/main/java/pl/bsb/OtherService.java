@@ -21,9 +21,6 @@ public class OtherService {
     }
 
     public void doSomething(){
-        for (CustomerService service : customerService) {
-            System.out.println(service);
-        }
     }
 
     public void doElse() {

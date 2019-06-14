@@ -11,7 +11,6 @@ package pl.bsb;
 //@RestController
 public class CustomerService {
     public CustomerService() {
-        System.out.println("CustomerService ctor");
     }
 
     public String test(){

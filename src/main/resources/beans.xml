@@ -12,27 +12,5 @@
           http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
 "
        >
-    <context:property-placeholder location="classpath*:app.properties"/>
-    <!--    <context:annotation-config/>-->
-    <!--    <context:component-scan base-package="pl.exe"/>-->
-    <beans profile="dev">
-        <bean class="pl.exe.RoleService">
-            <constructor-arg ref="permissionService"/>
-        </bean>
-    </beans>
-
-    <beans profile="prod">
-        <bean class="pl.exe.RoleService" init-method="init">
-            <property name="permissionService" ref="permissionService" />
-
-            <property name="serviceName" >
-                <util:list>
-                    <value>a</value>
-                    <value>b</value>
-                </util:list>
-            </property>
-        </bean>
-    </beans>
-
 
 </beans>
