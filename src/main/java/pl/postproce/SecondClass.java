@@ -1,6 +1,7 @@
 package pl.postproce;
 
 import org.springframework.context.event.*;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -29,6 +30,7 @@ public class SecondClass {
     }
 
     @EventListener({MySpringEvent.class})
+    @Async
     public void myEventListener(){
         System.out.println("myEventListener");
     }
