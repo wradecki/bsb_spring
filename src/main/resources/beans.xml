@@ -22,7 +22,7 @@
     </beans>
 
     <beans profile="prod">
-        <bean class="pl.exe.RoleService">
+        <bean class="pl.exe.RoleService" init-method="init">
             <property name="permissionService" ref="permissionService" />
 
             <property name="serviceName" >
