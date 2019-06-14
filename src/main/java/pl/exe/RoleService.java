@@ -1,6 +1,5 @@
 package pl.exe;
 
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -13,7 +12,7 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Service
-public class RoleService implements InitializingBean {
+public class RoleService {
 
     @PersistenceContext
     EntityManager entityManager;
@@ -25,8 +24,7 @@ public class RoleService implements InitializingBean {
     @Value("${mydbconfig}")
     MyDbConfig config;
 
-    public RoleService() {
-    }
+    private RoleDAO rolesDao;
 
     @PostConstruct
     public void init() {
@@ -38,8 +36,9 @@ public class RoleService implements InitializingBean {
         System.out.println("preDestroy");
     }
 
-    public RoleService(PermissionService permissionService) {
+    public RoleService(PermissionService permissionService, RoleDAO rolesDao) {
         this.permissionService = permissionService;
+        this.rolesDao = rolesDao;
         System.out.println("RoleService");
     }
 
@@ -59,10 +58,6 @@ public class RoleService implements InitializingBean {
         this.serviceNames = serviceNames;
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-
-    }
 
     public String testMethod() {
         return "RoleService " + permissionService.testMethod();
@@ -70,5 +65,9 @@ public class RoleService implements InitializingBean {
 
     public List<Role> getAllRoles(){
         return entityManager.createQuery("select r from Role r", Role.class).getResultList();
+    }
+
+    public List<Role> getAllRolesDao(){
+        return rolesDao.findAll();
     }
 }

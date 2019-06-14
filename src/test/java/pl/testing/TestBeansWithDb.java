@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -14,6 +15,7 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "/beans.xml")
 @Sql(scripts = "/insert.sql")
+@Sql(scripts = "/insertRole.sql")
 public class TestBeansWithDb {
     @Autowired
     UserService userService;
@@ -31,9 +33,14 @@ public class TestBeansWithDb {
 
 
     @Test
-    @Sql(scripts = "/insertRole.sql")
     public void roleServiceTest() {
         List<Role> allRoles = roleService.getAllRoles();
+        Assert.assertEquals(1, allRoles.size());
+    }
+
+    @Test
+    public void roleServiceDaoTest() {
+        List<Role> allRoles = roleService.getAllRolesDao();
         Assert.assertEquals(1, allRoles.size());
     }
 }
