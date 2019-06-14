@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import pl.value.MyDbConfig;
 
+import javax.annotation.PostConstruct;
+
 public class RoleService {
     PermissionService permissionService;
 
@@ -13,6 +15,11 @@ public class RoleService {
     MyDbConfig config;
 
     public RoleService() {
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("postConstruct");
     }
 
     public RoleService(PermissionService permissionService) {
