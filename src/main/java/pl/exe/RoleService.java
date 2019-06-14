@@ -8,9 +8,16 @@ import pl.value.MyDbConfig;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Service
 public class RoleService implements InitializingBean {
+
+    @PersistenceContext
+    EntityManager entityManager;
+
     PermissionService permissionService;
 
     String serviceNames[];
@@ -59,5 +66,9 @@ public class RoleService implements InitializingBean {
 
     public String testMethod() {
         return "RoleService " + permissionService.testMethod();
+    }
+
+    public List<Role> getAllRoles(){
+        return entityManager.createQuery("select r from Role r", Role.class).getResultList();
     }
 }

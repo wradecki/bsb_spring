@@ -2,3 +2,8 @@ create table USERS (
     FIRST_NAME VARCHAR(255),
     LAST_NAME VARCHAR(255)
 );
+
+create table ROLES (
+    ID INTEGER ,
+    ROLE_NAME VARCHAR(255)
+)
