@@ -3,11 +3,13 @@ package pl.exe;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import pl.value.MyDbConfig;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+@Service
 public class RoleService implements InitializingBean {
     PermissionService permissionService;
 
@@ -53,5 +55,9 @@ public class RoleService implements InitializingBean {
     @Override
     public void afterPropertiesSet() throws Exception {
 
+    }
+
+    public String testMethod() {
+        return "RoleService " + permissionService.testMethod();
     }
 }
