@@ -11,8 +11,9 @@ import pl.exe.ConfigurationExec;
 import pl.exe.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {ConfigTesting.class, ConfigurationExec.class})
+@ContextConfiguration(locations = "/beans.xml")
 public class TestingExe {
+
     @Autowired
     UserService userService;
 
