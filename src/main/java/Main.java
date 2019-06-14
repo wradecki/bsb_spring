@@ -17,6 +17,7 @@ public class Main {
         applicationContext.registerShutdownHook();
 
         FirstClass bean = applicationContext.getBean(FirstClass.class);
+        bean.sendtest();
 
     }
 }

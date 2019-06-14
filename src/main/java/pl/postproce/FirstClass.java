@@ -1,6 +1,7 @@
 package pl.postproce;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -11,6 +12,8 @@ public class FirstClass {
 
     @Autowired
     private SecondClass secondClass;
+    @Autowired
+    private ApplicationEventPublisher eventPublisher;
 
 
     public FirstClass() {
@@ -25,5 +28,10 @@ public class FirstClass {
     @PreDestroy
     public void destroy(){
         System.out.println("FirstClass destroy");
+    }
+
+    public void sendtest(){
+        MySpringEvent mySpringEvent = new MySpringEvent(this);
+        eventPublisher.publishEvent(mySpringEvent);
     }
 }
