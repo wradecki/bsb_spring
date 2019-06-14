@@ -15,6 +15,7 @@ public class Main {
         xmlBeanDefinitionReader.loadBeanDefinitions("/beans.xml");
         AnnotatedBeanDefinitionReader annotatedBeanDefinitionReader = new AnnotatedBeanDefinitionReader(applicationContext);
         annotatedBeanDefinitionReader.registerBean(ConfigurationExec.class);
+        applicationContext.registerShutdownHook();
         applicationContext.refresh();
 
         UserService bean = applicationContext.getBean(UserService.class);
