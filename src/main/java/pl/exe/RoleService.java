@@ -9,6 +9,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.BitSet;
 import java.util.List;
 
 @Service
@@ -69,5 +70,9 @@ public class RoleService {
 
     public List<Role> getAllRolesDao(){
         return rolesDao.findAll();
+    }
+
+    public List<Role> find(String name, Long id) {
+        return rolesDao.findAllByNameAndId(name, id);
     }
 }

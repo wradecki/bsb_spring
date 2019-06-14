@@ -43,4 +43,9 @@ public class TestBeansWithDb {
         List<Role> allRoles = roleService.getAllRolesDao();
         Assert.assertEquals(1, allRoles.size());
     }
+
+    @Test
+    public void findByTest() {
+        Assert.assertEquals(1, roleService.find("test", 1L).size());
+    }
 }
