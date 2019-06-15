@@ -4,5 +4,9 @@
     <!-- Define persistence unit -->
     <persistence-unit name="stadto">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true" />
+        </properties>
     </persistence-unit>
 </persistence>
